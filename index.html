@@ -34,7 +34,7 @@
     <div class="st"><b>10 €</b><span>pro Verkauf</span></div>
     <div class="st"><b>0</b><span>Follower nötig</span></div>
     <div class="st"><b>48 h</b><span>bis zur Antwort</span></div>
-    <div class="st"><b>40</b><span>Plätze</span></div>
+    <div class="st"><b>40</b><span>Plätze, vorerst</span></div>
   </div>
 </div>
 
@@ -44,7 +44,8 @@
     <p class="big" style="margin-top:14px">Niemand sollte beim Lachen <span>die Hand vor den Mund halten.</span></p>
     <p>Whitening in Deutschland ist ein Kreislauf: Das Produkt aus der Drogerie darf so wenig Wirkstoff enthalten, dass es kaum wirkt — aber genug, dass die Zähne ziehen. Danach verkauft dieselbe Industrie das Produkt gegen die Empfindlichkeit. Und dann wieder Whitening.</p>
     <p><b>smilepure bricht das.</b> Kein Peroxid. Ein Wirkstoff, der aufhellt, ohne den Schmelz anzugreifen. Ein Ergebnis, das hält, weil die Oberfläche darunter intakt bleibt.</p>
-    <p>Aber das erzählt niemand einer Anzeige. Das glaubt man einem Menschen, der es zwei Wochen selbst benutzt hat und dann sagt, was war. <b>Deshalb bauen wir diese Marke mit Creatorn — nicht mit einer Agentur.</b> Und wer am Anfang dabei ist, wächst mit — nicht unter ihr.</p>
+    <p>Heute ist smilepure klein. <b>In einem Jahr soll es die Whitening-Marke sein, die man in Deutschland kennt</b> — und danach in Österreich und der Schweiz. Das schaffen wir nicht mit einer Agentur, sondern mit Menschen, die es selbst benutzt haben und sagen, was war.</p>
+    <p>Und das ist der Punkt für dich: <b>Wer jetzt zu den ersten 40 gehört, ist im Kern, wenn die Marke groß ist.</b> Die 10 € pro Verkauf sind der Anfang. Eine Marke, die zehnmal so viel verkauft, zahlt dieselbe Provision — auf zehnmal so viele Verkäufe. Wer am Anfang dabei ist, wächst mit. Nicht unter der Marke, sondern mit ihr.</p>
     <p class="sig">— Ivan, Gründer smilepure</p>
   </div>
 </div></section>
@@ -52,7 +53,7 @@
 <section><div class="w">
   <div class="h"><span class="k">Was du bekommst</span><h2>Geld pro Verkauf. Gehalt für die, die liefern.</h2></div>
   <div class="g3">
-    <div class="c"><b>2×</b><h3>Produkt gratis</h3><p>Zwei Packungen für die volle Anwendung. Du behältst sie — egal, was dabei rauskommt.</p></div>
+    <div class="c"><b>1×</b><h3>Produkt gratis</h3><p>Eine Packung für die volle Anwendung. Du behältst sie — egal, was dabei rauskommt.</p></div>
     <div class="c"><b>10 €</b><h3>pro Verkauf</h3><p>20 % Provision auf jede Bestellung über deinen Code. Ab dem ersten Verkauf, ohne Deckel, ohne Laufzeit.</p></div>
     <div class="c"><b>€</b><h3>Deine Videos als Anzeige</h3><p>Läuft dein Video als Werbung, fragen wir vorher — und du bekommst extra Geld dafür.</p></div>
     <div class="c hi"><b>150 €</b><h3>bei 100 guten Videos im Monat</h3><p>Ausgezahlt auch ohne Verkäufe — zusätzlich zur Provision. Und der beste Creator des Monats bekommt obendrauf einen Bonus.</p></div>
@@ -62,7 +63,7 @@
 </div></section>
 
 <section class="band"><div class="w">
-  <div class="h"><span class="k">Wen wir suchen</span><h2>Du musst noch nichts gestartet haben.</h2><p>Follower sind uns egal. Erfahrung auch. Uns interessiert, ob du durchziehst.</p></div>
+  <div class="h"><span class="k">Wen wir suchen</span><h2>Du musst noch nichts gestartet haben.</h2><p>Follower sind uns egal. Erfahrung auch. Uns interessiert, ob du durchziehst. <b style="color:var(--ink)">Für jetzt auf 40 Creator begrenzt</b> — danach geht die Bewerbung zu.</p></div>
   <div class="g3">
     <div class="c"><b>01</b><h3>Hunger</h3><p>Du willst das wirklich — nicht das Gratisprodukt, sondern das, was danach kommt.</p></div>
     <div class="c"><b>02</b><h3>Durchziehen</h3><p>Du nennst uns eine Zahl an Videos. Und die hältst du.</p></div>
@@ -178,7 +179,7 @@
     var d=new FormData(f);
     if(f.action.indexOf('DEINE_FORM_ID')>-1){
       var lines=[];d.forEach(function(v,k){if(v)lines.push(k+': '+v)});
-      location.href='mailto:hallo@smilepure.eu?subject='+encodeURIComponent('Creator-Bewerbung')+'&body='+encodeURIComponent(lines.join('\n'));
+      location.href='mailto:ivangojic9@gmail.com?subject='+encodeURIComponent('Creator-Bewerbung')+'&body='+encodeURIComponent(lines.join('\n'));
       show(6);return;
     }
     fetch(f.action,{method:'POST',body:d,headers:{'Accept':'application/json'}})
