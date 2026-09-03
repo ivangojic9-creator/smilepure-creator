@@ -15,7 +15,7 @@
   <a class="logo" href="index.html">smilepure</a>
   <div class="nl">
     <span class="k" id="who" style="display:none">Creator-Bereich</span>
-    <a class="b o s" href="index.html">Zur Startseite</a>
+    <a class="b o s" href="index.html">Startseite</a>
   </div>
 </div></nav>
 
@@ -29,76 +29,105 @@
   <p class="err" id="gerr" style="margin-top:12px">Code stimmt nicht.</p>
 </div>
 
-<!-- Inhalt -->
-<main id="main" style="display:none">
+<!-- App -->
+<main id="app" style="display:none">
 
-<header class="hero w" style="padding:88px 0 56px">
-  <div class="pill"><i></i> Willkommen im Kern</div>
-  <h1>So läuft es.<br><span>Und so verdienst du.</span></h1>
-  <p class="sub">Alles, was du brauchst, auf einer Seite. Lies es einmal ganz — danach weißt du mehr als die meisten Agenturen.</p>
-</header>
+<div class="tabs"><div class="w" id="tabs">
+  <button class="tab on" data-v="start">Start</button>
+  <button class="tab" data-v="briefing">Briefing</button>
+  <button class="tab" data-v="inspiration">Inspiration</button>
+  <button class="tab" data-v="verdienst">Verdienst</button>
+  <button class="tab" data-v="tracking">Tracking</button>
+  <button class="tab" data-v="regeln">Regeln</button>
+</div></div>
 
-<section style="padding-top:0"><div class="w">
-  <div class="h"><span class="k">Ablauf</span><h2>Drei Schritte. Mehr nicht.</h2></div>
+<!-- START -->
+<section class="view on" id="v-start"><div class="w">
+  <span class="k">Willkommen</span>
+  <h2>Du bist drin.</h2>
+  <p style="color:var(--mute);max-width:56ch;margin-bottom:36px">Alles, was du brauchst, ist hier — nach Reitern sortiert. Lies Briefing und Regeln einmal ganz, dann leg los. Bei Fragen schreibst du mir direkt.</p>
   <div class="steps">
     <div class="s"><i>1</i><h3>Paket & Code</h3><p>Zwei Packungen kommen zu dir. Dazu dein persönlicher Rabattcode — jeder Kauf damit zählt für dich.</p></div>
     <div class="s"><i>2</i><h3>Zwei Wochen anwenden</h3><p>Film ab Tag eins, auch wenn noch nichts zu sehen ist. Der Vorher-Zustand ist die Hälfte des Videos.</p></div>
-    <div class="s"><i>3</i><h3>Drei Videos posten</h3><p>Aus den Formaten unten. Auf deinem Kanal, in deinem Stil. Dann sehen wir gemeinsam, was gelaufen ist.</p></div>
+    <div class="s"><i>3</i><h3>Videos posten</h3><p>Mindestens drei. Deine Ideen oder unsere Formate — beides zählt. Jede Woche siehst du unter Inspiration, was bei allen gelaufen ist.</p></div>
   </div>
+  <div class="note" style="margin-top:32px"><b>Diese Woche:</b> Woche 1. Die ersten Pakete gehen raus. Dein erstes Video sollte der Tag-1-Zustand sein — noch bevor du irgendetwas anwendest.</div>
 </div></section>
 
-<section class="band"><div class="w">
-  <div class="h"><span class="k">Was du verdienst</span><h2>Die Zahlen, ohne Umschweife.</h2></div>
-  <div class="g3">
-    <div class="c"><b>10 €</b><h3>pro 2er-Pack</h3><p>49,99 € Verkaufspreis · 20 % für dich. Ab Stufe B 12,50 €.</p></div>
-    <div class="c"><b>18 €</b><h3>pro Bundle</h3><p>89,99 € Verkaufspreis · 20 % für dich. Ab Stufe B 22,50 €.</p></div>
-    <div class="c hi"><b>Fixum</b><h3>ab Stufe A</h3><p>Wer konstant gute Videos liefert, bekommt ein festes monatliches Gehalt zusätzlich zur Provision. Die Höhe besprechen wir persönlich — sie hängt an deinem Output.</p></div>
-  </div>
-  <p style="text-align:center;color:var(--dim);font-size:.85rem;margin-top:18px">Rechenbeispiele, keine Zusagen. Was du verkaufst, hängt an deinen Videos — nicht an deiner Reichweite.</p>
-</div></section>
-
-<section><div class="w">
-  <div class="h"><span class="k">Briefing</span><h2>Fünf Formate. Such dir drei.</h2><p>Die Einstiege sind Startpunkte, keine Vorschriften.</p></div>
+<!-- BRIEFING -->
+<section class="view" id="v-briefing"><div class="w">
+  <span class="k">Briefing</span>
+  <h2>Fünf Startpunkte. Oder deine eigenen.</h2>
+  <div class="note" style="margin-bottom:36px"><b>Deine Ideen sind ausdrücklich erwünscht.</b> Die Formate hier sind Inspiration, keine Vorgabe. Wer selbst etwas erfindet, das läuft, landet damit in der Inspiration — und die anderen bauen darauf auf. Genau so soll es sein.</div>
 
   <div class="f"><div class="n">01</div><div><h3>Der ehrliche Test</h3><div class="hk">„Ich teste das 14 Tage und zeige jeden Schritt — auch wenn nichts passiert."</div><p>Tag 1, 7, 14. Gleiches Licht, gleicher Winkel, Tageslicht am Fenster, kein Filter. Die Ankündigung, dass du auch ein Scheitern zeigst, ist der Grund, warum man dir glaubt.</p></div></div>
-
-  <div class="f"><div class="n">02</div><div><h3>Was du vorher probiert hast</h3><div class="hk">„Ich hab dreimal aufgehellt. Danach haben meine Zähne bei kaltem Wasser gezogen."</div><p>dm-Strips, Whitening-Zahnpasta, Bleaching, Aktivkohle — was passiert ist, was gehalten hat, was gezogen hat. Die Hälfte deiner Kommentare hat dasselbe erlebt und es noch nie jemanden aussprechen hören.</p></div></div>
-
+  <div class="f"><div class="n">02</div><div><h3>Was du vorher probiert hast</h3><div class="hk">„Ich hab dreimal aufgehellt. Danach haben meine Zähne bei kaltem Wasser gezogen."</div><p>dm-Strips, Whitening-Zahnpasta, Bleaching, Aktivkohle — was passiert ist, was gehalten hat, was gezogen hat. Die Hälfte deiner Kommentare hat dasselbe erlebt.</p></div></div>
   <div class="f"><div class="n">03</div><div><h3>One-Shot mit Trend-Audio</h3><div class="hk">Text im Bild: „POV: du hast aufgehört, beim Lachen die Hand vorzuhalten"</div><p>Eine Einstellung, kein Schnitt, aktueller Sound, 15–25 Sekunden. Höchste Reichweite, geringster Aufwand. <b>Mach dieses zuerst.</b></p></div></div>
-
   <div class="f"><div class="n">04</div><div><h3>Der Vergleich</h3><div class="hk">„Ich hab nachgeschaut, was in den Strips drin ist, die ich zwei Jahre benutzt habe."</div><p>Das Drogerieprodukt daneben, beide Zutatenlisten vorlesen. Kein Urteil — der Zuschauer zieht den Schluss selbst.</p></div></div>
-
   <div class="f"><div class="n">05</div><div><h3>Die Reaktion von außen</h3><div class="hk">„Meine Schwester hat gefragt, ob ich beim Zahnarzt war."</div><p>Jemand anderes bemerkt es zuerst — ungestellt, mitten im Gespräch. Wiegt mehr als jedes Vorher-Nachher, das du selbst machst.</p></div></div>
 </div></section>
 
-<section class="band"><div class="w">
-  <div class="h"><span class="k">Stufen</span><h2>Wer liefert, steigt auf.</h2></div>
-  <div class="t">
+<!-- INSPIRATION -->
+<section class="view" id="v-inspiration"><div class="w">
+  <span class="k">Inspiration</span>
+  <h2>Was gerade läuft.</h2>
+  <p style="color:var(--mute);max-width:56ch;margin-bottom:32px">Jede Woche neu: Videos, die funktioniert haben — von euch und von draußen — und der Grund, warum. Nachmachen ist erlaubt. Besser machen ist das Ziel.</p>
+  <div id="inspo" class="inspo"></div>
+  <div class="empty" id="inspo-empty"><b>Woche 1 — noch leer.</b>Die ersten Gewinner landen hier, sobald die ersten Videos draußen sind. Deins könnte das erste sein.</div>
+</div></section>
+
+<!-- VERDIENST -->
+<section class="view" id="v-verdienst"><div class="w">
+  <span class="k">Verdienst</span>
+  <h2>Die Zahlen, ohne Umschweife.</h2>
+  <div class="g3" style="margin-bottom:14px">
+    <div class="c"><b>10 €</b><h3>pro Verkauf</h3><p>Zweierpack, 49,99 € — 20 % für dich. Ab Stufe B 12,50 €. Ohne Deckel, ohne Laufzeit, monatlich ausgezahlt.</p></div>
+    <div class="c hi"><b>150 €</b><h3>bei 100 guten Videos im Monat</h3><p>Ausgezahlt auch dann, wenn die Verkäufe noch nicht da sind — zusätzlich zur Provision. „Gut" heißt: echte Anwendung sichtbar, Regeln eingehalten, kein Ablesen.</p></div>
+    <div class="c"><b>Bonus</b><h3>für den besten Creator des Monats</h3><p>Wer im Monat am meisten bewegt hat — Verkäufe oder Reichweite — bekommt obendrauf einen Bonus. Verkündet in der Inspiration.</p></div>
+  </div>
+  <div class="note" style="margin-bottom:44px">Deine Videos als Anzeige: Wollen wir eins deiner Videos als Werbung schalten, fragen wir vorher — und du bekommst extra Geld dafür, unabhängig von allem oben.</div>
+
+  <span class="k">Stufen</span>
+  <h2 style="font-size:1.6rem">Wer liefert, steigt auf.</h2>
+  <div class="t" style="margin-top:22px">
     <div class="ti"><b>C</b><span class="l">Start</span><div class="how">Du bist hier</div><ul><li>2 Packungen</li><li>20 % Provision</li><li>Dieser Bereich</li></ul></div>
     <div class="ti"><b>B</b><span class="l">Aktiv</span><div class="how">3 Videos veröffentlicht</div><ul><li>Nachschub kostenlos</li><li>25 % Provision</li><li>Neue Briefings zuerst</li></ul></div>
-    <div class="ti a"><b>A</b><span class="l">Kern</span><div class="how">Verkäufe + konstanter Output</div><ul><li>Monatliches Fixum</li><li>Beteiligung, wenn dein Video als Anzeige läuft</li><li>Mitsprache bei neuen Produkten</li><li>Direkter Draht</li></ul></div>
+    <div class="ti a"><b>A</b><span class="l">Kern</span><div class="how">Konstanter Output</div><ul><li>150 € bei 100 Videos</li><li>Beteiligung an Anzeigen</li><li>Mitsprache bei Produkten</li><li>Direkter Draht</li></ul></div>
+  </div>
+  <p style="color:var(--dim);font-size:.85rem;margin-top:22px">Rechenbeispiele, keine Zusagen. Was du verkaufst, hängt an deinen Videos — nicht an deiner Reichweite.</p>
+</div></section>
+
+<!-- TRACKING -->
+<section class="view" id="v-tracking"><div class="w">
+  <span class="k">Tracking</span>
+  <h2>Deine Zahlen.</h2>
+  <p style="color:var(--mute);max-width:56ch">Jeder Kauf über deinen Code wird dir zugeordnet. Hier siehst du, was das für dich heißt — Verkäufe, Provision, Stufe.</p>
+  <div class="trk">
+    <div><b>—</b><span>Verkäufe diesen Monat</span></div>
+    <div><b>—</b><span>Provision offen</span></div>
+    <div><b>—</b><span>Videos veröffentlicht</span></div>
+    <div><b>C</b><span>Deine Stufe</span></div>
+  </div>
+  <div class="note"><b>Live-Zahlen kommen aus dem Provisionssystem.</b> Bis dein persönliches Dashboard freigeschaltet ist, bekommst du deine aktuellen Zahlen auf Anfrage — meistens am selben Tag.</div>
+  <div class="row" style="justify-content:flex-start;margin-top:22px">
+    <a class="b p" href="mailto:hallo@smilepure.eu?subject=Meine%20Zahlen&body=Mein%20Creator-Code%3A%20">Aktuelle Zahlen anfragen</a>
   </div>
 </div></section>
 
-<section><div class="w">
-  <div class="h"><span class="k">Regeln</span><h2>Vier Sätze. Bindend.</h2><p>Das schützt dich genauso wie uns.</p></div>
-  <div class="r">
+<!-- REGELN -->
+<section class="view" id="v-regeln"><div class="w">
+  <span class="k">Regeln</span>
+  <h2>Vier Sätze. Bindend.</h2>
+  <p style="color:var(--mute);margin-bottom:28px">Das schützt dich genauso wie uns.</p>
+  <div class="r" style="margin:0">
     <div><i>01</i><span><b>Als Werbung kennzeichnen.</b> „Werbung" oder „Anzeige" sichtbar im Video oder in der Caption. Pflicht, sobald du ein Gratisprodukt bekommst.</span></div>
     <div><i>02</i><span><b>Keine Heilversprechen.</b> Nichts über Karies, Zahnfleisch oder Krankheiten. Sprich über Aussehen und darüber, wie es sich anfühlt.</span></div>
     <div><i>03</i><span><b>Keine erfundenen Ergebnisse.</b> Keine fremden Bilder, keine bearbeiteten Zähne. Wenig passiert? Sag es. Du fliegst deshalb nicht raus.</span></div>
     <div><i>04</i><span><b>Nicht für Zahnärzte sprechen.</b> Nur, was du selbst erlebt hast.</span></div>
   </div>
-</div></section>
-
-<section class="band"><div class="w">
-  <div class="h"><span class="k">Was gerade läuft</span><h2>Die Gewinner der Woche.</h2><p>Hier landen jede Woche die Videos, die bei allen am besten gelaufen sind — mit dem Grund, warum. Noch leer, weil wir gerade erst anfangen. Deins könnte das erste sein.</p></div>
-</div></section>
-
-<section><div class="w">
-  <div class="vision" style="text-align:center">
-    <p class="big">Fragen, Ideen, ein Video, das du zeigen willst? <span>Schreib mir direkt.</span></p>
-    <p>Ich antworte selbst — meistens am selben Tag.</p>
-    <div class="row" style="margin-top:22px"><a class="b p" href="mailto:hallo@smilepure.eu?subject=Creator">hallo@smilepure.eu</a></div>
+  <div class="vision" style="margin-top:56px">
+    <p class="big" style="font-size:1.3rem">Fragen, Ideen, ein Video, das du zeigen willst? <span>Schreib mir direkt.</span></p>
+    <div class="row" style="justify-content:flex-start;margin-top:14px"><a class="b p" href="mailto:hallo@smilepure.eu?subject=Creator">hallo@smilepure.eu</a></div>
   </div>
 </div></section>
 
@@ -108,13 +137,44 @@
 
 <script>
 (function(){
-  var CODE='SMILE2026', gate=document.getElementById('gate'), main=document.getElementById('main'),
+  /* ---- Zugang ---- */
+  var CODE='SMILE2026', gate=document.getElementById('gate'), app=document.getElementById('app'),
       who=document.getElementById('who'), inp=document.getElementById('code'), go=document.getElementById('go'), gerr=document.getElementById('gerr');
-  function open(){gate.style.display='none';main.style.display='block';who.style.display='inline';try{localStorage.setItem('sp_cc','1')}catch(e){}}
+  function open(){gate.style.display='none';app.style.display='block';who.style.display='inline';try{localStorage.setItem('sp_cc','1')}catch(e){}route()}
   try{if(localStorage.getItem('sp_cc')==='1')open()}catch(e){}
   function tryOpen(){if(inp.value.trim().toUpperCase()===CODE)open();else{gerr.style.display='block';inp.select()}}
   go.addEventListener('click',tryOpen);
   inp.addEventListener('keydown',function(e){if(e.key==='Enter')tryOpen()});
+
+  /* ---- Reiter (Hash-Routing) ---- */
+  var tabs=[].slice.call(document.querySelectorAll('.tab')), views=[].slice.call(document.querySelectorAll('.view'));
+  function route(){
+    var v=(location.hash||'#start').slice(1);
+    if(!document.getElementById('v-'+v))v='start';
+    tabs.forEach(function(t){t.classList.toggle('on',t.dataset.v===v)});
+    views.forEach(function(s){s.classList.toggle('on',s.id==='v-'+v)});
+    window.scrollTo({top:0});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){location.hash=t.dataset.v})});
+  window.addEventListener('hashchange',route);
+
+  /* ---- Inspiration: jede Woche neue Einträge oben anfügen ----
+     { week:"KW 40", title:"…", who:"@name", platform:"TikTok", url:"https://…", why:"…" } */
+  var INSPO=[
+  ];
+  var grid=document.getElementById('inspo'), empty=document.getElementById('inspo-empty');
+  if(INSPO.length){
+    empty.style.display='none';
+    INSPO.forEach(function(x){
+      var c=document.createElement('article');c.className='ic';
+      c.innerHTML='<span class="wk">'+x.week+' · '+x.platform+'</span><h3></h3><p class="why"></p><span class="meta"></span><a class="b o s" target="_blank" rel="noopener">Video ansehen</a>';
+      c.querySelector('h3').textContent=x.title;
+      c.querySelector('.why').textContent=x.why;
+      c.querySelector('.meta').textContent=x.who;
+      c.querySelector('a').href=x.url;
+      grid.appendChild(c);
+    });
+  }
 })();
 </script>
 </body>
