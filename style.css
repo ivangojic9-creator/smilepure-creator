@@ -182,3 +182,15 @@ h2{font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:700;letter-spacing:-.03em;li
 footer{border-top:1px solid var(--line);padding:32px 0 48px;text-align:center;color:var(--dim);font-size:.8rem}
 footer a{color:var(--mute)}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+
+/* Sonntagsbericht */
+.rep{max-width:640px;margin:0}
+.rep .fld{margin-bottom:22px}
+.rep .q{display:block;font-size:1rem;font-weight:600;margin-bottom:6px;letter-spacing:-.01em}
+.rep .hint{display:block;color:var(--dim);font-size:.86rem;margin-bottom:10px}
+.rep input,.rep textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;color:var(--ink);font-family:inherit;font-size:1rem;padding:13px 15px}
+.rep input:focus,.rep textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:transparent}
+.rep textarea{min-height:88px;resize:vertical}
+.rep .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rep .chips{margin-bottom:0}
+@media (max-width:520px){.rep{padding:24px}.rep .two{grid-template-columns:1fr}}

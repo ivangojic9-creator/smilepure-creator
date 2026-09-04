@@ -34,6 +34,7 @@
 
 <div class="tabs"><div class="w" id="tabs">
   <button class="tab on" data-v="start">Start</button>
+  <button class="tab" data-v="bericht">Bericht</button>
   <button class="tab" data-v="briefing">Briefing</button>
   <button class="tab" data-v="inspiration">Inspiration</button>
   <button class="tab" data-v="verdienst">Verdienst</button>
@@ -56,7 +57,33 @@
     <div class="s"><i>2</i><h3>Ab Tag eins dabei</h3><p>Anwenden, filmen, posten — von Anfang an. Das ist kein Test, das ist der Start. Der Vorher-Zustand an Tag eins ist die Hälfte deines ersten Videos.</p></div>
     <div class="s"><i>3</i><h3>Dranbleiben</h3><p>Deine Ideen oder unsere Formate — beides zählt. Jede Woche siehst du unter Inspiration, was bei allen gelaufen ist. Wer 14 Tage nichts postet, ohne Bescheid zu sagen, gibt seinen Platz ab.</p></div>
   </div>
-  <div class="note" style="margin-top:32px"><b>Diese Woche:</b> Woche 1. Die ersten Pakete gehen raus. Dein erstes Video sollte der Tag-1-Zustand sein — noch bevor du irgendetwas anwendest.</div>
+  <div class="note" style="margin-top:32px"><b>Diese Woche:</b> Woche 1. Die ersten Pakete gehen raus. Dein erstes Video sollte der Tag-1-Zustand sein — noch bevor du irgendetwas anwendest.<br><a class="b o s" style="margin-top:12px" href="#bericht">Sonntagsbericht ausfüllen</a></div>
+</div></section>
+
+<!-- BERICHT -->
+<section class="view" id="v-bericht"><div class="w">
+  <span class="k">Sonntagsbericht</span>
+  <h2>Jeden Sonntag. Fünf Minuten.</h2>
+  <p style="color:var(--mute);max-width:56ch;margin-bottom:18px">Bis 20 Uhr. Damit ich weiß, wo du stehst, und dir helfen kann, bevor es hakt. Der Bericht zählt als Lebenszeichen — auch in einer Woche ohne Video.</p>
+  <div class="note" style="margin-bottom:32px"><b>Keine Ahnung, was du schreiben sollst?</b> Dann schreib genau das: „Keine Ahnung." Das ist eine ehrliche Antwort, und ich kann damit arbeiten. Wichtig ist nur, dass ich auf dem neuesten Stand bin.</div>
+
+  <form class="wiz rep" id="rep" action="https://formspree.io/f/DEINE_BERICHT_ID" method="POST" novalidate>
+    <input type="hidden" name="Woche" id="rep-week">
+    <div class="fld"><label class="q" for="r-name">Dein Name oder Handle</label><input id="r-name" name="Creator" placeholder="@deinname" required></div>
+    <div class="fld two"><div><label class="q" for="r-n">Videos diese Woche</label><input id="r-n" name="Videos gepostet" type="number" min="0" inputmode="numeric" placeholder="0" required></div>
+      <div><label class="q" for="r-sales">Verkäufe, falls bekannt</label><input id="r-sales" name="Verkaeufe" placeholder="weiß ich nicht"></div></div>
+    <div class="fld"><label class="q" for="r-best">Dein bestes Video</label><span class="hint">Link, und in einem Satz: warum lief das besser als die anderen?</span><textarea id="r-best" name="Bestes Video" placeholder="Link + warum"></textarea></div>
+    <div class="fld"><label class="q" for="r-weak">Was lief nicht</label><span class="hint">Schwaches Video, kein Bock, keine Zeit, keine Idee — was auch immer.</span><textarea id="r-weak" name="Schwaechen"></textarea></div>
+    <div class="fld"><label class="q" for="r-learn">Was du gelernt hast</label><span class="hint">Auch klein. „Videos mit Gesicht laufen besser" reicht.</span><textarea id="r-learn" name="Learnings"></textarea></div>
+    <div class="fld"><label class="q" for="r-next">Woran du nächste Woche arbeitest</label><textarea id="r-next" name="Naechste Woche" placeholder="z. B. 5 Videos, davon 2 mit Hook aus dem Briefing"></textarea></div>
+    <div class="fld"><span class="q">Brauchst du Hilfe?</span>
+      <div class="chips" id="r-help"><button type="button" class="chip" data-v="Nein, läuft">Nein, läuft</button><button type="button" class="chip" data-v="Ja, bei Ideen">Ja, bei Ideen</button><button type="button" class="chip" data-v="Ja, beim Schneiden">Ja, beim Schneiden</button><button type="button" class="chip" data-v="Ja, Motivation">Ja, Motivation</button><button type="button" class="chip" data-v="Ja, was anderes">Ja, was anderes</button></div>
+      <input type="hidden" name="Hilfe" id="r-helpv"></div>
+    <div class="fld"><label class="q" for="r-news">Neuigkeiten, Fragen, sonst was</label><span class="hint">Alles, was ich wissen sollte. Oder „nichts".</span><textarea id="r-news" name="Neuigkeiten"></textarea></div>
+    <div class="wnav"><span class="cnt" id="rep-cnt"></span><button type="submit" class="b p" id="rep-go">Bericht abschicken</button></div>
+    <p class="err" id="rep-err"></p>
+    <div class="done" id="rep-done" style="display:none"><h3>Angekommen.</h3><p>Danke. Ich lese jeden Bericht und antworte dir bis Montagabend.</p><p style="color:var(--dim);font-size:.9rem">Nächster Bericht: kommenden Sonntag bis 20 Uhr.</p></div>
+  </form>
 </div></section>
 
 <!-- BRIEFING -->
@@ -198,6 +225,37 @@
       grid.appendChild(c);
     });
   }
+
+  /* ---- Sonntagsbericht ---- */
+  (function(){
+    var f=document.getElementById('rep'); if(!f)return;
+    var d=new Date(), t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));
+    t.setUTCDate(t.getUTCDate()+4-(t.getUTCDay()||7)); var kw=Math.ceil((((t-Date.UTC(t.getUTCFullYear(),0,1))/864e5)+1)/7);
+    var week='KW '+kw+' '+d.getFullYear(); document.getElementById('rep-week').value=week;
+    document.getElementById('rep-cnt').textContent=week.toUpperCase();
+    var hv=document.getElementById('r-helpv');
+    [].forEach.call(document.querySelectorAll('#r-help .chip'),function(c){c.addEventListener('click',function(){
+      [].forEach.call(c.parentNode.children,function(x){x.classList.remove('on')});c.classList.add('on');hv.value=c.dataset.v})});
+    try{var nm=localStorage.getItem('sp_name');if(nm)document.getElementById('r-name').value=nm}catch(e){}
+    var go=document.getElementById('rep-go'), err=document.getElementById('rep-err'), done=document.getElementById('rep-done');
+    f.addEventListener('submit',function(e){
+      e.preventDefault(); err.style.display='none';
+      var name=document.getElementById('r-name').value.trim(), n=document.getElementById('r-n').value;
+      if(!name||n===''){err.textContent='Name und Anzahl Videos brauche ich mindestens.';err.style.display='block';return}
+      try{localStorage.setItem('sp_name',name);localStorage.setItem('sp_last',week)}catch(e){}
+      go.disabled=true; go.textContent='Wird gesendet…';
+      var fd=new FormData(f);
+      function ok(){[].forEach.call(f.querySelectorAll('.fld,.wnav'),function(x){x.style.display='none'});done.style.display='block'}
+      if(f.action.indexOf('DEINE_BERICHT_ID')>-1){
+        var lines=[];fd.forEach(function(v,k){if(v)lines.push(k+': '+v)});
+        location.href='mailto:ivangojic9@gmail.com?subject='+encodeURIComponent('Sonntagsbericht '+week+' — '+name)+'&body='+encodeURIComponent(lines.join('\n\n'));
+        ok();return;
+      }
+      fetch(f.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
+        .then(function(r){if(r.ok)ok();else{go.disabled=false;go.textContent='Nochmal versuchen';err.textContent='Senden fehlgeschlagen — bitte nochmal.';err.style.display='block'}})
+        .catch(function(){go.disabled=false;go.textContent='Nochmal versuchen';err.textContent='Keine Verbindung — bitte nochmal.';err.style.display='block'});
+    });
+  })();
 })();
 </script>
 </body>
