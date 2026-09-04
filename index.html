@@ -59,6 +59,7 @@
     <div class="c hi"><b>150 €</b><h3>bei 100 guten Videos im Monat</h3><p>Ausgezahlt auch ohne Verkäufe — zusätzlich zur Provision. Und der beste Creator des Monats bekommt obendrauf einen Bonus.</p></div>
     <div class="c"><b>↑</b><h3>Du lernst, was funktioniert</h3><p>Jede Woche siehst du, welche Videos bei allen gelaufen sind und warum. Das wissen sonst nur Agenturen.</p></div>
     <div class="c"><b>1</b><h3>Eine Person, kein Konzern</h3><p>Ich lese deine Bewerbung selbst, antworte selbst und sitze selbst in den Calls. Niemand dazwischen.</p></div>
+    <div class="c"><b>10k</b><h3>Team-Ziel: Giveaway für alle</h3><p>Erreichen wir gemeinsam 10.000 € Umsatz über Creator-Codes, gibt es ein Giveaway — für jeden, der mitgemacht hat. Ihr seid ein Team, keine Konkurrenz.</p></div>
   </div>
 </div></section>
 
@@ -91,7 +92,7 @@
   <div class="h"><span class="k">Bewerbung</span><h2>Ein paar Fragen. Dann dein Zugang.</h2><p>Kurz antworten. Nach der Zusage bekommst du deinen Login zum Creator-Bereich.</p></div>
 
   <form class="wiz" id="wiz" action="https://formspree.io/f/DEINE_FORM_ID" method="POST" novalidate>
-    <div class="prog" id="prog"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="prog" id="prog"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
     <div class="step on" data-i="0">
       <p class="q">Wo willst du posten?</p>
@@ -136,12 +137,6 @@
     </div>
 
     <div class="step" data-i="6">
-      <p class="q">Warum das hier — und nicht irgendein anderes Produkt?</p>
-      <p class="hint">Ein Satz reicht.</p>
-      <input type="text" name="Warum" required>
-    </div>
-
-    <div class="step" data-i="7">
       <p class="q">Wohin schicken wir dein Paket?</p>
       <p class="hint">Nur für den Versand. Sonst nichts.</p>
       <input type="text" name="Name" placeholder="Vor- und Nachname" required style="margin-bottom:10px">
@@ -152,14 +147,14 @@
       </div>
     </div>
 
-    <div class="step" data-i="8">
+    <div class="step" data-i="7">
       <p class="q">Wie erreichen wir dich?</p>
       <p class="hint">Antwort in 48 Stunden. Zusage oder Absage — niemand wird ignoriert.</p>
       <input type="email" name="email" placeholder="deine@mail.de" required>
       <label class="pledge"><input type="checkbox" name="Zusage" value="Ich poste weiter, auch wenn die ersten Videos nichts bringen" required><span><b>Ich weiß, dass die ersten Videos oft nichts bringen.</b> Ich poste trotzdem weiter — das ist mein Teil des Deals.</span></label>
     </div>
 
-    <div class="step" data-i="9">
+    <div class="step" data-i="8">
       <div class="done">
         <h3>Angekommen.</h3>
         <p>Du hörst innerhalb von 48 Stunden von mir — persönlich.</p>
@@ -170,7 +165,7 @@
     <p class="err" id="err">Bitte beantworte die Frage, bevor du weitergehst.</p>
     <div class="wnav" id="wnav">
       <button type="button" class="b o" id="back">Zurück</button>
-      <span class="cnt" id="cnt">1 / 9</span>
+      <span class="cnt" id="cnt">1 / 8</span>
       <button type="button" class="b p" id="next">Weiter</button>
     </div>
   </form>
@@ -183,7 +178,7 @@
   var f=document.getElementById('wiz'),steps=[].slice.call(f.querySelectorAll('.step')),
       prog=document.getElementById('prog').children,back=document.getElementById('back'),
       next=document.getElementById('next'),cnt=document.getElementById('cnt'),err=document.getElementById('err'),
-      wnav=document.getElementById('wnav'),plat=document.getElementById('plat'),i=0,LAST=8;
+      wnav=document.getElementById('wnav'),plat=document.getElementById('plat'),i=0,LAST=7;
 
   f.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){
     c.classList.toggle('on');
@@ -226,10 +221,10 @@
     if(f.action.indexOf('DEINE_FORM_ID')>-1){
       var lines=[];d.forEach(function(v,k){if(v)lines.push(k+': '+v)});
       location.href='mailto:ivangojic9@gmail.com?subject='+encodeURIComponent('Creator-Bewerbung')+'&body='+encodeURIComponent(lines.join('\n'));
-      show(9);return;
+      show(8);return;
     }
     fetch(f.action,{method:'POST',body:d,headers:{'Accept':'application/json'}})
-      .then(function(r){if(r.ok)show(9);else{next.disabled=false;next.textContent='Nochmal versuchen';err.textContent='Senden fehlgeschlagen — bitte nochmal.';err.style.display='block'}})
+      .then(function(r){if(r.ok)show(8);else{next.disabled=false;next.textContent='Nochmal versuchen';err.textContent='Senden fehlgeschlagen — bitte nochmal.';err.style.display='block'}})
       .catch(function(){next.disabled=false;next.textContent='Nochmal versuchen';err.textContent='Keine Verbindung — bitte nochmal.';err.style.display='block'});
   }
   show(0);

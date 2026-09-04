@@ -168,6 +168,17 @@ h2{font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:700;letter-spacing:-.03em;li
 .step .two{display:grid;grid-template-columns:1fr 2fr;gap:10px}
 @media (max-width:520px){.step .two{grid-template-columns:1fr}}
 
+/* Team-Ziel */
+.goal{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;max-width:760px}
+.goal .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.goal h3{font-size:1.05rem;font-weight:600}
+.goal .nums{font-family:"JetBrains Mono",monospace;font-size:.85rem;color:var(--mute);font-variant-numeric:tabular-nums}
+.goal .nums b{color:var(--blue);font-weight:500}
+.goal .bar{height:10px;border-radius:6px;background:var(--bg);border:1px solid var(--line);overflow:hidden}
+.goal .bar i{display:block;height:100%;background:var(--blue);border-radius:6px;transition:width .6s ease;min-width:2px}
+.goal p{color:var(--mute);font-size:.9rem;margin-top:12px}
+.goal p b{color:var(--ink)}
+
 footer{border-top:1px solid var(--line);padding:32px 0 48px;text-align:center;color:var(--dim);font-size:.8rem}
 footer a{color:var(--mute)}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}

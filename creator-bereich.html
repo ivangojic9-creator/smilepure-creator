@@ -46,6 +46,11 @@
   <span class="k">Willkommen</span>
   <h2>Du bist drin.</h2>
   <p style="color:var(--mute);max-width:56ch;margin-bottom:36px">Alles, was du brauchst, ist hier — nach Reitern sortiert. Lies Briefing und Regeln einmal ganz, dann leg los. Bei Fragen schreibst du mir direkt.</p>
+  <div class="goal" id="goal-start">
+    <div class="top"><h3>Team-Ziel</h3><span class="nums"><b class="g-now">0 €</b> / <span class="g-goal">10.000 €</span> gemeinsam</span></div>
+    <div class="bar"><i class="g-bar" style="width:0%"></i></div>
+    <p><b>Erreichen wir das zusammen, gibt es ein Giveaway</b> — für jeden, der mindestens drei Videos gepostet hat. Ihr seid ein Team, keine Konkurrenz. Stand wird wöchentlich aktualisiert.</p>
+  </div>
   <div class="steps">
     <div class="s"><i>1</i><h3>Paket & Code</h3><p>Eine Packung kommt zu dir. Dazu dein persönlicher Rabattcode — jeder Kauf damit zählt für dich.</p></div>
     <div class="s"><i>2</i><h3>Zwei Wochen anwenden</h3><p>Film ab Tag eins, auch wenn noch nichts zu sehen ist. Der Vorher-Zustand ist die Hälfte des Videos.</p></div>
@@ -86,6 +91,12 @@
     <div class="c"><b>Bonus</b><h3>für den besten Creator des Monats</h3><p>Wer im Monat am meisten bewegt hat — Verkäufe oder Reichweite — bekommt obendrauf einen Bonus. Verkündet in der Inspiration.</p></div>
   </div>
   <div class="note" style="margin-bottom:44px">Deine Videos als Anzeige: Wollen wir eins deiner Videos als Werbung schalten, fragen wir vorher — und du bekommst extra Geld dafür, unabhängig von allem oben.</div>
+
+  <div class="goal" id="goal-verdienst">
+    <div class="top"><h3>Team-Ziel</h3><span class="nums"><b class="g-now">0 €</b> / <span class="g-goal">10.000 €</span> gemeinsam</span></div>
+    <div class="bar"><i class="g-bar" style="width:0%"></i></div>
+    <p><b>Erreichen wir das zusammen, gibt es ein Giveaway</b> — für jeden, der mindestens drei Videos gepostet hat. Ihr seid ein Team, keine Konkurrenz. Stand wird wöchentlich aktualisiert.</p>
+  </div>
 
   <span class="k">Stufen</span>
   <h2 style="font-size:1.6rem">Wer liefert, steigt auf.</h2>
@@ -157,6 +168,16 @@
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){location.hash=t.dataset.v})});
   window.addEventListener('hashchange',route);
+
+  /* ---- Team-Ziel: TEAM_SALES wöchentlich aktualisieren ---- */
+  var TEAM_SALES=0, TEAM_GOAL=10000;
+  (function(){
+    var pct=Math.max(0,Math.min(100,Math.round(TEAM_SALES/TEAM_GOAL*100)));
+    var fmt=function(n){return n.toLocaleString('de-DE')+' €'};
+    [].forEach.call(document.querySelectorAll('.g-now'),function(e){e.textContent=fmt(TEAM_SALES)});
+    [].forEach.call(document.querySelectorAll('.g-goal'),function(e){e.textContent=fmt(TEAM_GOAL)});
+    [].forEach.call(document.querySelectorAll('.g-bar'),function(e){e.style.width=pct+'%'});
+  })();
 
   /* ---- Inspiration: jede Woche neue Einträge oben anfügen ----
      { week:"KW 40", title:"…", who:"@name", platform:"TikTok", url:"https://…", why:"…" } */
