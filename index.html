@@ -71,56 +71,95 @@
   </div>
 </div></section>
 
-<section id="bewerben"><div class="w">
-  <div class="h"><span class="k">Bewerbung</span><h2>Fünf Fragen. Dann dein Zugang.</h2><p>Kurz antworten. Nach der Zusage bekommst du deinen Login zum Creator-Bereich.</p></div>
+<section><div class="w">
+  <div class="h"><span class="k">Du überlegst noch</span><h2>Du willst starten. Aber du hast noch nie.</h2><p>Dann lies das hier. Es ist für dich geschrieben.</p></div>
+  <div class="beliefs">
+    <div class="bl"><p class="say">Ich hab keine Follower.</p><p class="ans">Follower kommen von Videos. Nicht andersrum. <b>Jeder Account, den du bewunderst, hatte mal null</b> — und ein erstes Video, das drei Leute gesehen haben.</p></div>
+    <div class="bl"><p class="say">Ich bin nicht der Typ dafür.</p><p class="ans">Es gibt keinen Typ. Es gibt Leute, die posten, und Leute, die zuschauen. <b>Der einzige Unterschied ist das erste Video.</b></p></div>
+    <div class="bl"><p class="say">Was, wenn es peinlich wird?</p><p class="ans">Es wird. Beim ersten Video. Beim dritten nicht mehr. <b>An dein erstes Video erinnert sich niemand</b> — außer du.</p></div>
+    <div class="bl"><p class="say">Ich weiß nicht, was ich sagen soll.</p><p class="ans">Deshalb gibt es das Briefing: fünf Startpunkte, fertig ausformuliert. <b>Und jede Woche siehst du, was bei allen funktioniert hat.</b> Du fängst nie bei null an.</p></div>
+    <div class="bl"><p class="say">Was, wenn ich keinen einzigen Verkauf mache?</p><p class="ans">Dann hast du gelernt, was 90 % nie lernen — und du bist noch drin. <b>Wer 100 gute Videos macht, wird bezahlt. Mit oder ohne Verkauf.</b></p></div>
+    <div class="bl"><p class="say">Bringt das überhaupt was?</p><p class="ans">Schau dir die großen amerikanischen Marken an. Die Creator, die dort heute richtig Geld verdienen, hatten am ersten Tag keine Million Follower. <b>Sie waren am ersten Tag da.</b> Das ist der ganze Unterschied.</p></div>
+  </div>
+  <div class="close">
+    <p>Ich glaube an dich, <span>bevor du es tust.</span><br>Das ist der Deal.</p>
+    <p class="sig">— Ivan</p>
+  </div>
+</div></section>
+
+<section id="bewerben" class="band"><div class="w">
+  <div class="h"><span class="k">Bewerbung</span><h2>Ein paar Fragen. Dann dein Zugang.</h2><p>Kurz antworten. Nach der Zusage bekommst du deinen Login zum Creator-Bereich.</p></div>
 
   <form class="wiz" id="wiz" action="https://formspree.io/f/DEINE_FORM_ID" method="POST" novalidate>
-    <div class="prog" id="prog"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="prog" id="prog"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
     <div class="step on" data-i="0">
       <p class="q">Wo willst du posten?</p>
-      <p class="hint">Mehrere möglich. Ein Link ist optional.</p>
-      <div class="chips" data-name="Plattform">
+      <p class="hint">TikTok und Instagram empfehlen wir. Mehrere möglich.</p>
+      <div class="chips">
         <button type="button" class="chip">TikTok</button>
         <button type="button" class="chip">Instagram</button>
-        <button type="button" class="chip">YouTube Shorts</button>
-        <button type="button" class="chip">Noch keinen Kanal</button>
+        <button type="button" class="chip">Facebook</button>
       </div>
       <input type="hidden" name="Plattform" id="plat">
       <input type="text" name="Kanal_Link" placeholder="Link zu deinem Kanal (optional)">
     </div>
 
     <div class="step" data-i="1">
+      <p class="q">Wie alt bist du?</p>
+      <p class="hint">Ehrlich. Beide Enden brauchen wir.</p>
+      <input type="number" name="Alter" min="16" max="99" placeholder="z. B. 24" required>
+    </div>
+
+    <div class="step" data-i="2">
       <p class="q">Wie viele Videos schaffst du in den nächsten 14 Tagen — realistisch?</p>
       <p class="hint">Eine Zahl. Wir halten dich daran fest, und du dich auch.</p>
       <input type="number" name="Videos_14_Tage" min="1" placeholder="z. B. 5" required>
     </div>
 
-    <div class="step" data-i="2">
-      <p class="q">Was hast du für deine Zähne schon probiert — und was ist passiert?</p>
-      <p class="hint">Zwei, drei Sätze. Wenn nichts: schreib das.</p>
-      <textarea name="Vorher_probiert" required></textarea>
-    </div>
-
     <div class="step" data-i="3">
-      <p class="q">Ein Video von dir läuft nicht. Null Reichweite. Was machst du?</p>
-      <p class="hint">Es gibt keine falsche Antwort — aber eine ehrliche.</p>
-      <textarea name="Wenn_es_nicht_laeuft" required></textarea>
+      <p class="q">Hast du schon mal für eine Marke Content gemacht — und was ist passiert?</p>
+      <p class="hint">Wenn nein: schreib „nein". Das ist kein Nachteil.</p>
+      <textarea name="Marken_Erfahrung" required></textarea>
     </div>
 
     <div class="step" data-i="4">
+      <p class="q">Du hast fünf Videos gepostet. Kaum Reichweite, kein einziger Verkauf. Was machst du?</p>
+      <p class="hint">Es gibt keine falsche Antwort — aber eine ehrliche.</p>
+      <textarea name="Wenn_nichts_passiert" required></textarea>
+    </div>
+
+    <div class="step" data-i="5">
+      <p class="q">Was könnte dich davon abhalten, durchzuziehen?</p>
+      <p class="hint">Zeit, Mut, Technik, Familie — egal was. Wer es kennt, kann es umgehen.</p>
+      <textarea name="Hindernis" required></textarea>
+    </div>
+
+    <div class="step" data-i="6">
       <p class="q">Warum das hier — und nicht irgendein anderes Produkt?</p>
       <p class="hint">Ein Satz reicht.</p>
       <input type="text" name="Warum" required>
     </div>
 
-    <div class="step" data-i="5">
+    <div class="step" data-i="7">
+      <p class="q">Wohin schicken wir dein Paket?</p>
+      <p class="hint">Nur für den Versand. Sonst nichts.</p>
+      <input type="text" name="Name" placeholder="Vor- und Nachname" required style="margin-bottom:10px">
+      <input type="text" name="Strasse" placeholder="Straße und Hausnummer" required style="margin-bottom:10px">
+      <div class="two">
+        <input type="text" name="PLZ" placeholder="PLZ" required>
+        <input type="text" name="Ort" placeholder="Ort" required>
+      </div>
+    </div>
+
+    <div class="step" data-i="8">
       <p class="q">Wie erreichen wir dich?</p>
       <p class="hint">Antwort in 48 Stunden. Zusage oder Absage — niemand wird ignoriert.</p>
       <input type="email" name="email" placeholder="deine@mail.de" required>
+      <label class="pledge"><input type="checkbox" name="Zusage" value="Ich poste weiter, auch wenn die ersten Videos nichts bringen" required><span><b>Ich weiß, dass die ersten Videos oft nichts bringen.</b> Ich poste trotzdem weiter — das ist mein Teil des Deals.</span></label>
     </div>
 
-    <div class="step" data-i="6">
+    <div class="step" data-i="9">
       <div class="done">
         <h3>Angekommen.</h3>
         <p>Du hörst innerhalb von 48 Stunden von mir — persönlich.</p>
@@ -131,7 +170,7 @@
     <p class="err" id="err">Bitte beantworte die Frage, bevor du weitergehst.</p>
     <div class="wnav" id="wnav">
       <button type="button" class="b o" id="back">Zurück</button>
-      <span class="cnt" id="cnt">1 / 6</span>
+      <span class="cnt" id="cnt">1 / 9</span>
       <button type="button" class="b p" id="next">Weiter</button>
     </div>
   </form>
@@ -144,7 +183,7 @@
   var f=document.getElementById('wiz'),steps=[].slice.call(f.querySelectorAll('.step')),
       prog=document.getElementById('prog').children,back=document.getElementById('back'),
       next=document.getElementById('next'),cnt=document.getElementById('cnt'),err=document.getElementById('err'),
-      wnav=document.getElementById('wnav'),plat=document.getElementById('plat'),i=0,LAST=5;
+      wnav=document.getElementById('wnav'),plat=document.getElementById('plat'),i=0,LAST=8;
 
   f.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){
     c.classList.toggle('on');
@@ -158,17 +197,24 @@
     cnt.textContent=(Math.min(n,LAST)+1)+' / '+(LAST+1);
     next.textContent=n===LAST?'Bewerbung abschicken':'Weiter';
     wnav.style.display=n>LAST?'none':'flex';err.style.display='none';
-    var el=steps[n].querySelector('input:not([type=hidden]),textarea');if(el)el.focus();
+    err.textContent='Bitte beantworte die Frage, bevor du weitergehst.';
+    var el=steps[n].querySelector('input:not([type=hidden]):not([type=checkbox]),textarea');if(el)el.focus();
   }
   function valid(n){
     var s=steps[n];
     if(n===0)return plat.value!=='';
-    var r=s.querySelector('[required]');
-    return !r||(r.value.trim()!==''&&r.checkValidity());
+    var req=[].slice.call(s.querySelectorAll('[required]'));
+    return req.every(function(r){
+      if(r.type==='checkbox')return r.checked;
+      return r.value.trim()!==''&&r.checkValidity();
+    });
   }
   back.addEventListener('click',function(){if(i>0)show(i-1)});
   next.addEventListener('click',function(){
-    if(!valid(i)){err.style.display='block';return}
+    if(!valid(i)){
+      if(i===LAST&&!steps[i].querySelector('[type=checkbox]').checked)err.textContent='Der letzte Haken ist der wichtigste.';
+      err.style.display='block';return;
+    }
     if(i<LAST){show(i+1);return}
     submit();
   });
@@ -180,10 +226,10 @@
     if(f.action.indexOf('DEINE_FORM_ID')>-1){
       var lines=[];d.forEach(function(v,k){if(v)lines.push(k+': '+v)});
       location.href='mailto:ivangojic9@gmail.com?subject='+encodeURIComponent('Creator-Bewerbung')+'&body='+encodeURIComponent(lines.join('\n'));
-      show(6);return;
+      show(9);return;
     }
     fetch(f.action,{method:'POST',body:d,headers:{'Accept':'application/json'}})
-      .then(function(r){if(r.ok)show(6);else{next.disabled=false;next.textContent='Nochmal versuchen';err.textContent='Senden fehlgeschlagen — bitte nochmal.';err.style.display='block'}})
+      .then(function(r){if(r.ok)show(9);else{next.disabled=false;next.textContent='Nochmal versuchen';err.textContent='Senden fehlgeschlagen — bitte nochmal.';err.style.display='block'}})
       .catch(function(){next.disabled=false;next.textContent='Nochmal versuchen';err.textContent='Keine Verbindung — bitte nochmal.';err.style.display='block'});
   }
   show(0);
