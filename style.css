@@ -194,3 +194,5 @@ footer a{color:var(--mute)}
 .rep .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .rep .chips{margin-bottom:0}
 @media (max-width:520px){.rep{padding:24px}.rep .two{grid-template-columns:1fr}}
+
+.ic iframe{width:100%;aspect-ratio:9/16;max-height:560px;border:0;border-radius:10px;margin:10px 0;background:#000;display:block}

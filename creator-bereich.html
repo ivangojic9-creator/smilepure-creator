@@ -211,13 +211,19 @@
   /* ---- Inspiration: jede Woche neue Einträge oben anfügen ----
      { week:"KW 40", title:"…", who:"@name", platform:"TikTok", url:"https://…", why:"…" } */
   var INSPO=[
+    { week:"KW 36", title:"Der Preis als Hook: „110 €??“ und das Produkt sofort in der Hand", who:"@reapez · von draußen", platform:"TikTok", embed:"7671801487999208736", url:"https://www.tiktok.com/@reapez/video/7671801487999208736",
+      why:"Sekunde 1: Preis als Text ins Bild, Hände am Produkt, kein Intro. Danach wird jede Funktion angefasst statt erklärt. Für smilepure: „39,99 €?? für das hier“ als Text, Packung auf, Strip raus, auf die Zähne, alles in 30 Sekunden. Nicht reden, zeigen." },
+    { week:"KW 36", title:"Zu zweit vergleichen statt allein pitchen", who:"@mr.navidtae · von draußen", platform:"TikTok", embed:"7673454625718078752", url:"https://www.tiktok.com/@mr.navidtae/video/7673454625718078752",
+      why:"Zwei Leute, zwei Geräte, ein Gespräch. Der Zuschauer bleibt, weil es wie Unterhaltung wirkt, nicht wie Werbung. Für smilepure: du und eine Freundin, dm-Strips gegen smilepure, jede nimmt eine Seite, und die Frage „bei wem zieht es?“ trägt das ganze Video." },
+    { week:"KW 36", title:"Das Produkt als ein Schritt in der Routine", who:"@alinamithenry · von draußen", platform:"TikTok", embed:"7670687271930137889", url:"https://www.tiktok.com/@alinamithenry/video/7670687271930137889",
+      why:"Gesicht nah, Haarband, mehrere Schritte hintereinander, jedes Produkt beiläufig. Das Produkt ist nie der Star, die Routine ist es. Für smilepure: Strips während der Abend-Skincare drauf, 15 Minuten später abziehen, fertig. Genau so werden Strips im echten Leben benutzt." }
   ];
   var grid=document.getElementById('inspo'), empty=document.getElementById('inspo-empty');
   if(INSPO.length){
     empty.style.display='none';
     INSPO.forEach(function(x){
       var c=document.createElement('article');c.className='ic';
-      c.innerHTML='<span class="wk">'+x.week+' · '+x.platform+'</span><h3></h3><p class="why"></p><span class="meta"></span><a class="b o s" target="_blank" rel="noopener">Video ansehen</a>';
+      c.innerHTML='<span class="wk">'+x.week+' · '+x.platform+'</span><h3></h3>'+(x.embed?'<iframe src="https://www.tiktok.com/embed/v2/'+x.embed+'" loading="lazy" allow="encrypted-media" allowfullscreen></iframe>':'')+'<p class="why"></p><span class="meta"></span><a class="b o s" target="_blank" rel="noopener">Auf TikTok ansehen</a>';
       c.querySelector('h3').textContent=x.title;
       c.querySelector('.why').textContent=x.why;
       c.querySelector('.meta').textContent=x.who;
