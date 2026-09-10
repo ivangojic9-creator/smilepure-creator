@@ -82,7 +82,7 @@
     <div class="fld"><label class="q" for="r-news">Neuigkeiten, Fragen, sonst was</label><span class="hint">Alles, was ich wissen sollte. Oder „nichts".</span><textarea id="r-news" name="Neuigkeiten"></textarea></div>
     <div class="wnav"><span class="cnt" id="rep-cnt"></span><button type="submit" class="b p" id="rep-go">Bericht abschicken</button></div>
     <p class="err" id="rep-err"></p>
-    <div class="done" id="rep-done" style="display:none"><h3>Angekommen.</h3><p>Danke. Ich lese jeden Bericht und antworte dir bis Montagabend.</p><p style="color:var(--dim);font-size:.9rem">Nächster Bericht: kommenden Sonntag bis 20 Uhr.</p></div>
+    <div class="done" id="rep-done" style="display:none"><h3>Angekommen.</h3><p>Danke. Ich lese jeden Bericht und antworte dir bis Montagabend.</p><p style="color:var(--dim);font-size:.9rem">Nächster Bericht: kommenden Sonntag bis 20 Uhr.</p><div id="rep-fb" style="display:none;margin-top:16px;text-align:left" class="note"><b>Ein Schritt fehlt noch.</b> Dein Mailprogramm sollte sich geöffnet haben, dort auf „Senden“ drücken. Nichts passiert? Dann Bericht kopieren und Ivan per TikTok-DM schicken.<br><button type="button" class="b p s" style="margin-top:10px" id="rep-fbcopy">Bericht kopieren</button></div></div>
   </form>
 </div></section>
 
@@ -254,8 +254,11 @@
       function ok(){[].forEach.call(f.querySelectorAll('.fld,.wnav'),function(x){x.style.display='none'});done.style.display='block'}
       if(f.action.indexOf('DEINE_BERICHT_ID')>-1){
         var lines=[];fd.forEach(function(v,k){if(v)lines.push(k+': '+v)});
-        location.href='mailto:ivangojic9@gmail.com?subject='+encodeURIComponent('Sonntagsbericht '+week+' — '+name)+'&body='+encodeURIComponent(lines.join('\n\n'));
-        ok();return;
+        var txt='Sonntagsbericht '+week+' — '+name+'\n'+lines.join('\n');
+        ok();done.querySelector('h3').textContent='Fast angekommen.';document.getElementById('rep-fb').style.display='block';
+        document.getElementById('rep-fbcopy').addEventListener('click',function(){var b=this;function cp(t){if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t)}var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);return Promise.resolve()}cp(txt).then(function(){b.textContent='Kopiert. Jetzt bei TikTok einfügen.'})});
+        setTimeout(function(){location.href='mailto:ivangojic9@gmail.com?subject='+encodeURIComponent('Sonntagsbericht '+week+' — '+name)+'&body='+encodeURIComponent(lines.join('\n\n'))},300);
+        return;
       }
       fetch(f.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
         .then(function(r){if(r.ok)ok();else{go.disabled=false;go.textContent='Nochmal versuchen';err.textContent='Senden fehlgeschlagen — bitte nochmal.';err.style.display='block'}})

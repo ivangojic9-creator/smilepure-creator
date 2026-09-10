@@ -158,6 +158,11 @@
         <h3>Angekommen.</h3>
         <p>Du hörst innerhalb von 48 Stunden von mir — persönlich.</p>
         <p>Bei einer Zusage bekommst du deinen Zugangscode zum Creator-Bereich, dein Paket und deinen Code für die Provision.</p>
+        <div id="fb" style="display:none;margin-top:18px;text-align:left;background:var(--blue-soft);border:1px solid rgba(124,200,255,.25);border-radius:12px;padding:16px 18px">
+          <p style="color:var(--ink);margin:0 0 10px"><b style="color:var(--blue)">Ein Schritt fehlt noch.</b> Dein Mailprogramm sollte sich gerade geöffnet haben. Dort auf „Senden“ drücken, erst dann ist die Bewerbung bei mir.</p>
+          <p style="color:var(--mute);margin:0 0 12px;font-size:.92rem">Nichts passiert? Dann kopier deine Antworten und schick sie mir als Nachricht auf TikTok oder per Mail an ivangojic9@gmail.com.</p>
+          <button type="button" class="b p s" id="fbcopy">Antworten kopieren</button>
+        </div>
       </div>
     </div>
 
@@ -219,8 +224,12 @@
     var d=new FormData(f);
     if(f.action.indexOf('DEINE_FORM_ID')>-1){
       var lines=[];d.forEach(function(v,k){if(v)lines.push(k+': '+v)});
-      location.href='mailto:ivangojic9@gmail.com?subject='+encodeURIComponent('Creator-Bewerbung')+'&body='+encodeURIComponent(lines.join('\n'));
-      show(8);return;
+      var txt='Creator-Bewerbung\n'+lines.join('\n');
+      show(8);document.getElementById('fb').style.display='block';document.querySelector('#wiz .done h3').textContent='Fast angekommen.';
+      document.getElementById('fbcopy').addEventListener('click',function(){var b=this;function ok(){b.textContent='Kopiert. Jetzt bei TikTok einfügen.'}
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,function(){var a=document.createElement('textarea');a.value=txt;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);ok()})}else{var a=document.createElement('textarea');a.value=txt;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);ok()}});
+      setTimeout(function(){location.href='mailto:ivangojic9@gmail.com?subject='+encodeURIComponent('Creator-Bewerbung')+'&body='+encodeURIComponent(lines.join('\n'))},300);
+      return;
     }
     fetch(f.action,{method:'POST',body:d,headers:{'Accept':'application/json'}})
       .then(function(r){if(r.ok)show(8);else{next.disabled=false;next.textContent='Nochmal versuchen';err.textContent='Senden fehlgeschlagen — bitte nochmal.';err.style.display='block'}})
