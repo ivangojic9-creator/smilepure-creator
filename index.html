@@ -90,7 +90,8 @@
 <section id="bewerben" class="band"><div class="w">
   <div class="h"><span class="k">Bewerbung</span><h2>Ein paar Fragen. Dann dein Zugang.</h2><p>Kurz antworten. Nach der Zusage bekommst du deinen Login zum Creator-Bereich — und bleibst von Anfang an dabei.</p></div>
 
-  <form class="wiz" id="wiz" action="https://formspree.io/f/DEINE_FORM_ID" method="POST" novalidate>
+  <form class="wiz" id="wiz" action="https://formsubmit.co/ajax/ivangojic9@gmail.com" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="Creator-Bewerbung"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
     <div class="prog" id="prog"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
     <div class="step on" data-i="0">
@@ -222,18 +223,19 @@
   function submit(){
     next.disabled=true;next.textContent='Wird gesendet…';
     var d=new FormData(f);
-    if(f.action.indexOf('DEINE_FORM_ID')>-1){
-      var lines=[];d.forEach(function(v,k){if(v)lines.push(k+': '+v)});
+    function fallback(){
+      var lines=[];d.forEach(function(v,k){if(v&&k.charAt(0)!=='_')lines.push(k+': '+v)});
       var txt='Creator-Bewerbung\n'+lines.join('\n');
       show(8);document.getElementById('fb').style.display='block';document.querySelector('#wiz .done h3').textContent='Fast angekommen.';
       document.getElementById('fbcopy').addEventListener('click',function(){var b=this;function ok(){b.textContent='Kopiert. Jetzt bei TikTok einfügen.'}
         if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,function(){var a=document.createElement('textarea');a.value=txt;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);ok()})}else{var a=document.createElement('textarea');a.value=txt;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);ok()}});
       setTimeout(function(){location.href='mailto:ivangojic9@gmail.com?subject='+encodeURIComponent('Creator-Bewerbung')+'&body='+encodeURIComponent(lines.join('\n'))},300);
-      return;
     }
+    var nm=d.get('Name')||d.get('name')||'';if(nm)d.set('_subject','Creator-Bewerbung: '+nm);
     fetch(f.action,{method:'POST',body:d,headers:{'Accept':'application/json'}})
-      .then(function(r){if(r.ok)show(8);else{next.disabled=false;next.textContent='Nochmal versuchen';err.textContent='Senden fehlgeschlagen — bitte nochmal.';err.style.display='block'}})
-      .catch(function(){next.disabled=false;next.textContent='Nochmal versuchen';err.textContent='Keine Verbindung — bitte nochmal.';err.style.display='block'});
+      .then(function(r){return r.json().then(function(j){return {ok:r.ok&&String(j.success)==='true'}})})
+      .then(function(x){if(x.ok)show(8);else fallback()})
+      .catch(function(){fallback()});
   }
   show(0);
 })();
