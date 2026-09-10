@@ -138,13 +138,14 @@
 
     <div class="step" data-i="6">
       <p class="q">Wohin schicken wir dein Paket?</p>
-      <p class="hint">Nur für den Versand. Sonst nichts.</p>
+      <p class="hint">Nur für den Versand, auch die Nummer. Sonst nichts.</p>
       <input type="text" name="Name" placeholder="Vor- und Nachname" required style="margin-bottom:10px">
       <input type="text" name="Strasse" placeholder="Straße und Hausnummer" required style="margin-bottom:10px">
-      <div class="two">
+      <div class="two" style="margin-bottom:10px">
         <input type="text" name="PLZ" placeholder="PLZ" required>
         <input type="text" name="Ort" placeholder="Ort" required>
       </div>
+      <input type="tel" name="Telefon" placeholder="Handynummer (der Versand braucht sie fürs Paket)" required inputmode="tel" autocomplete="tel">
     </div>
 
     <div class="step" data-i="7">
