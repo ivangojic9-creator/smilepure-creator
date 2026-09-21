@@ -153,6 +153,7 @@
       <p class="hint">Antwort in 48 Stunden. Zusage oder Absage — niemand wird ignoriert.</p>
       <input type="email" name="email" placeholder="deine@mail.de" required>
       <label class="pledge"><input type="checkbox" name="Zusage" value="Ich poste weiter, auch wenn die ersten Videos nichts bringen" required><span><b>Ich weiß, dass die ersten Videos oft nichts bringen.</b> Ich poste trotzdem weiter. Und ich weiß: 14 Tage ohne Video, ohne Bescheid, und mein Platz geht an den Nächsten. Das ist mein Teil des Deals.</span></label>
+      <label class="pledge" style="margin-top:10px"><input type="checkbox" name="Nutzungsrechte" value="smilepure darf meine Videos mit dem Produkt auf der Website, in Social-Media-Kanaelen und in bezahlten Anzeigen nutzen, zeitlich unbegrenzt, mit Nennung meines Namens oder Handles" required><span><b>Meine Videos dürfen weiterverwendet werden.</b> smilepure darf meine Videos mit dem Produkt auf der Website, in den Social-Media-Kanälen und in bezahlten Anzeigen nutzen, ohne zeitliche Begrenzung. Dabei werde ich mit meinem Namen oder Handle genannt.</span></label>
       <p class="hint" style="margin-top:12px">Mit dem Absenden verarbeiten wir deine Angaben zur Prüfung der Bewerbung und zum Versand, siehe <a href="datenschutz.html" target="_blank" rel="noopener" style="color:var(--blue)">Datenschutzerklärung</a>.</p>
     </div>
 
@@ -214,7 +215,7 @@
   back.addEventListener('click',function(){if(i>0)show(i-1)});
   next.addEventListener('click',function(){
     if(!valid(i)){
-      if(i===LAST&&!steps[i].querySelector('[type=checkbox]').checked)err.textContent='Der letzte Haken ist der wichtigste.';
+      if(i===LAST&&[].slice.call(steps[i].querySelectorAll('[type=checkbox]')).some(function(c){return !c.checked}))err.textContent='Beide Haken sind Teil des Deals.';
       err.style.display='block';return;
     }
     if(i<LAST){show(i+1);return}
